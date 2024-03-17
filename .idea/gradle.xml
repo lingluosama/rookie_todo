@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/rookie_todo/demo" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/rookie_todo/demo" />
+          </set>
+        </option>
+      </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
         <option name="gradleHome" value="$USER_HOME$/gradle-7.6.4" />
@@ -9,6 +18,11 @@
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/servers" />
         <option name="gradleHome" value="$USER_HOME$/gradle-7.6.4" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/servers" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
