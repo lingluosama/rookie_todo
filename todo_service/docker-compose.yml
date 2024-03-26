@@ -1,0 +1,44 @@
+  version: "1.0"
+  services:
+    db:
+      build:
+        dockerfile: dockerfile
+      image: postgres
+      environment:
+        -POSTGRES_USER: todo
+        -POSTGRES_PASSWORD: todo
+      healthcheck:
+        test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+        timeout: 45s
+        interval: 10s
+        retries: 10
+      ports:
+        - 5432:5432
+      networks:
+        - blink
+    redis:
+      image: redis
+      ports:
+        - 6379:6379
+    oss:
+      image: minio/minio
+      hostname: "minio"
+      ports:
+        - 9000:9000 # api 端口
+        - 9001:9001 # 控制台端口
+      environment:
+        MINIO_ACCESS_KEY: todo
+        MINIO_SECRET_KEY: wdnmd114514
+        MINIO_ROOT_USER: rookie_todo
+        MINIO_ROOT_PASSWORD: 1145141918
+        # volumes:
+        # - ./minio/data:/data
+      command: server --console-address ':9001' /data
+      privileged: true
+      # restart: always
+      networks:
+        - blink
+
+  networks:
+    blink:
+      external: true

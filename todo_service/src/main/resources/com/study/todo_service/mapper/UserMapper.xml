@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.todo_service.mapper.UserMapper">
+    <select id="GetUserById" resultType="com.study.todo_service.mapper.model.user">
+        SELECT * FROM todo.public.users
+        <where>
+            id=#{id}
+        </where>
+    </select>
+    <select id="QueryUserByLogin" resultType="int">
+        SELECT id from users
+        <where>
+            password=#{password} AND name=#{name}
+        </where>
+
+    </select>
+    <insert id="CreateUser" parameterType="com.study.todo_service.mapper.model.user" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO todo.public.users (name, password)
+        VALUES (#{name}, #{password})
+    </insert>
+    <select id="QueryUserExist" resultType="java.lang.Integer">
+        select id FROM todo.public.users
+        <where>
+            name=#{name};
+        </where>
+    </select>
+
+</mapper>

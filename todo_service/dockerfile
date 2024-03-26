@@ -1,0 +1,7 @@
+FROM mysql:latest
+
+COPY initdb.sql /docker-entrypoint-initdb.d/
+
+ENV MYSQL_ROOT_PASSWORD="todo"
+
+CMD ["--init-file", "/docker-entrypoint-initdb.d/initdb.sql"]

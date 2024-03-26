@@ -5,6 +5,13 @@
     <file type="web" url="file://$PROJECT_DIR$/rookie_todo/demo" />
     <file type="web" url="file://$PROJECT_DIR$/servers" />
   </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/todo_service/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
